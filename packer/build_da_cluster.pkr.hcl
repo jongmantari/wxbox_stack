@@ -155,7 +155,7 @@ build {
 
   provisioner "shell" {
     execute_command = "{{ .Vars }} sudo -E '{{ .Path }}'"
-    script          = "${path.root}/cluster-start-stack-script.sh"
+    script          = "${path.root}/../scripts/cluster-start-stack-script.sh"
     valid_exit_codes = [0,1,2]
   }
 }
