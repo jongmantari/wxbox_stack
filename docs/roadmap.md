@@ -95,6 +95,7 @@ Extend the stack to support additional JEDI applications on the same cluster inf
 
 Planned applications:
 
+- 2D Analysis from nc files
 - MPAS-JEDI
 - SOCA
 
