@@ -1,0 +1,1000 @@
+ 1011  rm fv3_sfx.yaml~
+ 1012  ls
+ 1013  more fv3_sfx.yaml 
+ 1014  ls
+ 1015  cd ../
+ 1016  ls
+ 1017  cat pyproject.toml 
+ 1018  emacs -nw pyproject.toml 
+ 1019  ls
+ 1020  git status
+ 1021  git add .
+ 1022  git commit -m"correct import path"
+ 1023  git push origin
+ 1024  ls
+ 1025  ls -R
+ 1026  conda activate sfx
+ 1027  pip install -e .
+ 1028  python -c "import sfx_core; print('SFX-core OK')"
+ 1029  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1030  emacs src/sfx_core/spectral/core_stepper.py &
+ 1031  pip install -e .
+ 1032  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1033  cat src/sfx_core/spectral/core_stepper.py
+ 1034  pip install -e .
+ 1035  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1036  ls
+ 1037  ncdump -h bkg/ufsda.t18z.atm.f006.cubed_sphere_grid.nc 
+ 1038  ls
+ 1039  cat src/sfx_apps/fv3_demo/fv3_demo_yaml.py 
+ 1040  pip install -e .
+ 1041  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1042  cat src/sfx_core/spectral/core_stepper.py 
+ 1043  pip install -e .
+ 1044  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1045  pip install -e .
+ 1046  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1047  cat src/sfx_core/spectral/state.py 
+ 1048  pip install -e .
+ 1049  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1050  cat src/sfx_core/spectral/operators/cubed_mosaic_blend.py 
+ 1051  pip install -e .
+ 1052  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1053  pip install -e .
+ 1054  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1055  pip install -e .
+ 1056  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1057  ls output/
+ 1058  pip install -e .
+ 1059  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1060  pip install cartopy
+ 1061  python -m sfx_apps.fv3_demo.fv3_demo_yaml --yaml config/fv3_sfx.yaml
+ 1062  cat config/fv3_sfx.yaml 
+ 1063  python plot_temp.py --yaml config/fv3_sfx.yaml 
+ 1064  cdump -h grid/C96_grid.tile1.nc
+ 1065  ncdump -h grid/C96_grid.tile1.nc
+ 1066  python plot_temp.py --yaml config/fv3_sfx.yaml 
+ 1067  ls
+ 1068  cd bkg/
+ 1069  ls
+ 1070  ncdump -h ufsda.t18z.atm.f006.cubed_sphere_grid.nc | more
+ 1071  cd ..
+ 1072  python plot_temp.py --yaml config/fv3_sfx.yaml 
+ 1073  python plot_temp1.py --yaml config/fv3_sfx.yaml 
+ 1074  ncdump -h bkg/ufsda.t18z.atm.f006.cubed_sphere_grid.nc | more
+ 1075  python plot_temp1.py --yaml config/fv3_sfx.yaml 
+ 1076  cd output/
+ 1077  rm *
+ 1078  cd ../
+ 1079  python plot_temp1.py --yaml config/fv3_sfx.yaml 
+ 1080  cd bkg/
+ 1081  ls
+ 1082  ncdump -v grid_xt ufsda.t18z.atm.f006.cubed_sphere_grid.nc | more
+ 1083  cd grid/
+ 1084  ls
+ 1085  ncdump -h C96_grid.tile1.nc | more
+ 1086  cd ..
+ 1087  python plot_temp1.py --yaml config/fv3_sfx.yaml 
+ 1088  cd grid/
+ 1089  ls
+ 1090  ncdump -h C96_grid.tile1.nc 
+ 1091  conda install -c conda-forge tempest-remap
+ 1092  pip install xesmf
+ 1093  conda install -c conda-forge tempest-remap
+ 1094  which GenerateCSMesh
+ 1095  which GenerateOverlapMesh
+ 1096  which GenerateOfflineMap
+ 1097  cd ../
+ 1098  ls
+ 1099  rm *.npz
+ 1100  ls
+ 1101  rm *~
+ 1102  ls
+ 1103  rm plot_temp.py 
+ 1104  mv plot_temp1.py ../
+ 1105  ls
+ 1106  git status
+ 1107  emacs -nw .gitignore
+ 1108  git status
+ 1109  emacs -nw .gitignore
+ 1110  git status
+ 1111  git add .
+ 1112  git commit -m"fixed core stepper and blend to test"
+ 1113  git push origin
+ 1114  ls
+ 1115  cd src/
+ 1116  d sfx_apps/fv3_demo/
+ 1117  ls
+ 1118  cd sfx_apps/fv3_demo/
+ 1119  ls
+ 1120  cd ../
+ 1121  cat config/fv3_sfx.yaml 
+ 1122  git status
+ 1123  pip install -e .
+ 1124  history 
+ 1125  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1126  pip install -e .
+ 1127  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1128  cd grid/
+ 1129  ls
+ 1130  ncdump -h C96_mosaic.nc
+ 1131  ls
+ 1132  ncdump -h grid_spec.nc 
+ 1133  ls
+ 1134  ncdump -h C96_grid.tile1.nc | more
+ 1135  cd ../
+ 1136  pip install -e .
+ 1137  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1138  GenerateCSMesh --help
+ 1139  conda install -c conda-forge tempest-remap
+ 1140  GenerateCSMesh --help
+ 1141  which GenerateCSMesh
+ 1142  conda remove tempest-remap
+ 1143  which GenerateCSMesh
+ 1144  conda install -c conda-forge tempest-remap
+ 1145  GenerateCSMesh --help
+ 1146  GenerateCSMesh 
+ 1147  conda remove tempest-remap
+ 1148  conda install -c conda-forge esmpy
+ 1149  python - << 'EOF'
+ 1150  import ESMF
+ 1151  print("ESMF version:", ESMF.__version__)
+ 1152  EOF
+ 1153  conda list | grep esmpy
+ 1154  conda list | grep esmf
+ 1155  python - << 'EOF'
+ 1156  import esmpy
+ 1157  print("ESMPy version:", esmpy.__version__)
+ 1158  EOF
+ 1159  pip install -e .
+ 1160  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1161  ls grid/
+ 1162  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1163  pip install -e .
+ 1164  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1165  pip install -e .
+ 1166  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1167  pip install -e .
+ 1168  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1169  ls
+ 1170  cat PET0.ESMF_LogFile
+ 1171  pip install -e .
+ 1172  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1173  pip install -e .
+ 1174  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1175  pip install -e .
+ 1176  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1177  pip install -e .
+ 1178  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1179  ls
+ 1180  rm PET0.ESMF_LogFile 
+ 1181  rm outCSMesh.g 
+ 1182  ls
+ 1183  git status
+ 1184  git add .
+ 1185  git commit -m"add esmpy standalone regrid"
+ 1186  git push origin
+ 1187  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1188  cd bkg/
+ 1189  ls
+ 1190  cd ../
+ 1191  cd grid/
+ 1192  ls
+ 1193  ncdump C96_mosaic.nc -h
+ 1194  ncdump C96_grid.tile1.nc -h
+ 1195  cd ../
+ 1196  pip install -e .
+ 1197  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1198  pip install -e .
+ 1199  rm output/*
+ 1200  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1201  pip install -e .
+ 1202  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1203  pip install -e .
+ 1204  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1205  pip install -e .
+ 1206  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1207  pip install -e .
+ 1208  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1209  pip install -e .
+ 1210  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1211  cd bkg/
+ 1212  ls
+ 1213  ncdump -h tmp ufsda.t18z.atm.f006.cubed_sphere_grid.nc | more
+ 1214  ncdump -v tmp ufsda.t18z.atm.f006.cubed_sphere_grid.nc | more
+ 1215  cd ../
+ 1216  pip install -e .
+ 1217  python -m sfx_apps.fv3_demo.fv3_create_remap_files --yaml  config/fv3_sfx.yaml 
+ 1218  conda activate sfx_env
+ 1219  conda activate sfx_core
+ 1220  conda activate sfx
+ 1221  ls
+ 1222  rm -rf sfx-*
+ 1223  git clone https://github.com/sfxorg/sfx_core
+ 1224  cd sfx_core/
+ 1225  python tests/test_master_collision.py 
+ 1226  pip install jax
+ 1227  python tests/test_master_collision.py 
+ 1228  cd
+ 1229  pcluster create jedi-cluster
+ 1230  aws --version
+ 1231  sudo apt update
+ 1232  sudo apt install awscli -y
+ 1233  aws configure
+ 1234  sudo apt  install awscli
+ 1235  snap info aws-cli
+ 1236  sudo apt  install awscli
+ 1237  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+ 1238  unzip awscliv2.zip
+ 1239  sudo apt install unzip -y
+ 1240  sudo ./aws/install
+ 1241  aws --version
+ 1242  aws configure
+ 1243  aws --version
+ 1244  pthon3 -m venv ~/pcluster-venv
+ 1245  python3 -m venv ~/pcluster-venv
+ 1246  pip install aws-parallelcluster
+ 1247  mkdir -p ~/.parallelcluster
+ 1248  history 
+ 1249  cd mantari
+ 1250  emacs keys &
+ 1251  cd
+ 1252  emacs ~/.parallelcluster/config.yaml &
+ 1253  cd
+ 1254  cd Downloads/
+ 1255  ls
+ 1256  mv jong-aws2.pem ../.ssh/
+ 1257  cd ../
+ 1258  cd .ssh/
+ 1259  ls
+ 1260  pwd
+ 1261  cd
+ 1262  pcluster validate -c ~/.parallelcluster/config.yaml
+ 1263  pcluster version
+ 1264  source ~/pcluster-venv/bin/activate
+ 1265  pcluster validate -c ~/.parallelcluster/config.yaml
+ 1266  which pcluster
+ 1267  conda deactivate
+ 1268  exit
+ 1269  mkdir mantari
+ 1270  cd mantari
+ 1271  emacs keys &
+ 1272  emacs keys
+ 1273  cat keys
+ 1274  cd
+ 1275  ls
+ 1276  cd Downloads/
+ 1277  ls
+ 1278  cat jong-aws.pem 
+ 1279  ls
+ 1280  pwd
+ 1281  mv /home/jongkim/Downloads/jong-aws.pem ~/.ssh/
+ 1282  cmod 400 ~/.ssh/jong-aws.pem
+ 1283  chmod 400 ~/.ssh/jong-aws.pem
+ 1284  ssh -i /home/jongkim/Downloads/jong-aws.pem ubuntu@172.31.37.232
+ 1285  ssh -i /home/jongkim/.ssh/jong-aws.pem ubuntu@172.31.37.232
+ 1286  ssh -i /home/jongkim/.ssh/jong-aws.pem ubuntu@18.118.134.197
+ 1287  ubuntu
+ 1288  uname -a
+ 1289  ssh -i ~/.ssh/jong-aws-ed25519 ubuntu@18.220.238.98
+ 1290  ls -l ~/.ssh
+ 1291  ssh -i ~/.ssh/jong-aws-ed25519.pem ubuntu@18.220.238.98
+ 1292  history 
+ 1293  ubuntu version
+ 1294  uname
+ 1295  uname -a
+ 1296  cd mantari
+ 1297  cp clean.yaml ../
+ 1298  cd ../
+ 1299  more clean.yaml
+ 1300  cp mantari/clean.yaml .
+ 1301  more clean.yaml
+ 1302  ssh -i ~/.ssh/jong-aws-ed25519.pem ubuntu@18.220.238.98
+ 1303  ssh -i ~/.ssh/jong-aws-ed25519.pem ubuntu@18.216.116.174
+ 1304  aws ec2 describe-images --image-ids ami-0ea3c35c5c3284d82
+ 1305  aws ec2 describe-images --image-ids ami-0b8dbe7ab439eac9a
+ 1306  aws ec2 describe-images --image-ids ami-091017c7508ac95f6
+ 1307  ls -al
+ 1308  cd .parallelcluster/
+ 1309  ls
+ 1310  cat config.yaml
+ 1311  ls
+ 1312  ls -al
+ 1313  cat config.yaml~
+ 1314  cd
+ 1315  ls .ssh/
+ 1316  pcluster list-clusters
+ 1317  ls
+ 1318  source pcluster-venv/bin/pcluster
+ 1319  cd pcluster-venv/
+ 1320  source ~/pcluster-venv/bin/activate
+ 1321  aws ec2 describe-security-groups   --query "SecurityGroups[*].[GroupName,GroupId]"   --output table
+ 1322  aws ec2 describe-subnets --query "Subnets[*].[SubnetId,MapPublicIpOnLaunch]" --output table
+ 1323  ls ../.ssh/
+ 1324  cd
+ 1325  ls
+ 1326  cd .parallelcluster/
+ 1327  ls
+ 1328  cd ../
+ 1329  pcluster create-cluster -n jedi-cluster -c .parallelcluster/config.yaml
+ 1330  aws ec2 describe-subnets --query "Subnets[*].[SubnetId,AvailabilityZone]" --output table
+ 1331  pcluster create-cluster -n jedi-cluster -c .parallelcluster/config.yaml
+ 1332  pcluster describe-cluster -n jedi-cluster
+ 1333  pcluster list-official-images --region us-east-2
+ 1334  pcluster delete-cluster -n jedi-cluster
+ 1335  pcluster create-cluster -n jedi-cluster -c .parallelcluster/config.yaml
+ 1336  pcluster describe-cluster -n jedi-cluster
+ 1337  aws cloudformation describe-stack-events   --region us-east-2   --stack-name jedi-cluster   --query 'StackEvents[0:20].[Timestamp,ResourceStatus,ResourceType,LogicalResourceId,ResourceStatusReason]'
+ 1338  aws cloudformation describe-stack-events   --region us-east-2   --stack-name jedi-cluster   --query 'StackEvents[].[Timestamp,ResourceStatus,ResourceType,LogicalResourceId,ResourceStatusReason]'   --output text | grep -v "None"
+ 1339  pcluster get-cluster-log   -n jedi-cluster   --filters "node_type=head"   --region us-east-2   --output-file headnode-logs.tar.gz
+ 1340  pcluster delete-cluster -n jedi-cluster
+ 1341  pcluster create-cluster -n jedi-cluster -c .parallelcluster/config.yaml
+ 1342  pcluster describe-cluster -n jedi-cluster
+ 1343  pcluster get-cluster-log   -n jedi-cluster   --filters "node_type=head"   --region us-east-2   --output-file headnode-logs.tar.gz
+ 1344  pcluster export-cluster-logs   -n jedi-cluster   --region us-east-2   --output-file jedi-logs.tar.gz
+ 1345  tar -xzf jedi-logs.tar.gz
+ 1346  aws ec2 describe-route-tables   --region us-east-2   --filters "Name=association.subnet-id,Values=subnet-03f83f81048186ba7"   --query "RouteTables[].Routes"
+ 1347  aws ec2 describe-subnets   --region us-east-2   --query "Subnets[].{Id:SubnetId,Az:AvailabilityZone,Vpc:VpcId}"
+ 1348  aws ec2 describe-route-tables   --region us-east-2   --filters "Name=association.subnet-id,Values=subnet-015c76afda98ba5b9"   --query "RouteTables[].Routes"
+ 1349  aws ec2 describe-route-tables   --region us-east-2   --filters "Name=association.subnet-id,Values=subnet-08e4892b1698377d4"   --query "RouteTables[].Routes"
+ 1350  aws ec2 describe-vpcs   --region us-east-2   --filters Name=isDefault,Values=true   --query "Vpcs[].VpcId"
+ 1351  aws ec2 delete-vpc --vpc-id vpc-02393eeced32233fe
+ 1352  aws ec2 describe-route-tables   --region us-east-2   --filters Name=vpc-id,Values=vpc-02393eeced32233fe   --query "RouteTables[].{Id:RouteTableId,Routes:Routes,Associations:Associations}"
+ 1353  aws ec2 associate-route-table   --region us-east-2   --route-table-id rtb-093372cddc1693952   --subnet-id subnet-015c76afda98ba5b9
+ 1354  aws ec2 associate-route-table   --region us-east-2   --route-table-id rtb-093372cddc1693952   --subnet-id subnet-03f83f81048186ba7
+ 1355  aws ec2 associate-route-table   --region us-east-2   --route-table-id rtb-093372cddc1693952   --subnet-id subnet-08e4892b1698377d4
+ 1356  aws ec2 describe-route-tables   --region us-east-2   --filters "Name=association.subnet-id,Values=subnet-03f83f81048186ba7"   --query "RouteTables[].Routes"
+ 1357  aws fsx describe-file-systems   --file-system-ids fs-02f9488275707df5c   --query "FileSystems[].SubnetIds"
+ 1358  pcluster delete-cluster -n jedi-cluster
+ 1359  pcluster create-cluster -n jedi-cluster -c .parallelcluster/config.yaml
+ 1360  pcluster delete-cluster -n jedi-cluster
+ 1361  pcluster create-cluster -n jedi-cluster -c .parallelcluster/config.yaml
+ 1362  pcluster delete-cluster -n jedi-cluster
+ 1363  pcluster create-cluster -n jedi-cluster -c .parallelcluster/config.yaml
+ 1364  sed -n '1,40p' .parallelcluster/config.yaml
+ 1365  realpath .parallelcluster/config.yaml
+ 1366  ls -l .parallelcluster
+ 1367  rm .parallelcluster/config.yaml~
+ 1368  pcluster create-cluster -n jedi-cluster -c .parallelcluster/config.yaml
+ 1369  ls -l .parallelcluster
+ 1370  realpath .parallelcluster/config.yaml
+ 1371  ls -l .parallelcluster
+ 1372  pcluster version
+ 1373  pcluster configure --config .parallelcluster/config.yaml
+ 1374  sed -n '1,20p' .parallelcluster/config.yaml | cat -A
+ 1375  grep -n "Image" .parallelcluster/config.yaml
+ 1376  grep -n "Os" .parallelcluster/config.yaml
+ 1377  cat -n .parallelcluster/config.yaml | cat -A
+ 1378  expand -t 2 .parallelcluster/config.yaml > clean.yaml
+ 1379  pcluster delete-cluster -n jedi-cluster
+ 1380  pcluster create-cluster -n jedi-cluster -c clean.yaml
+ 1381  expand -t 2 clean.yaml > fixed.yaml
+ 1382  sed -n '1,20p' fixed.yaml | cat -A
+ 1383  pcluster create-cluster -n jedi-cluster -c fixed.yaml
+ 1384  pcluster describe-cluster -n jedi-cluster
+ 1385  pcluster list-official-images --region us-east-2
+ 1386  history 
+ 1387  pcluster delete-cluster -n jedi-cluster
+ 1388  pcluster create-cluster -n jedi-cluster -c clean.yaml
+ 1389  pcluster describe-cluster -n jedi-cluster
+ 1390  history 
+ 1391  ls
+ 1392  rm fixed.yaml*
+ 1393  ls
+ 1394  cd .ssh/
+ 1395  ls
+ 1396  cd ../
+ 1397  ls
+ 1398  pwd
+ 1399  cd mantari
+ 1400  ls
+ 1401  cp ../clean.yaml .
+ 1402  ls
+ 1403  rm \#keys# keys~
+ 1404  ls
+ 1405  history 
+ 1406  pcluster delete-cluster -n jedi-cluster
+ 1407  pcluster create-cluster -n jedi-cluster -c clean.yaml
+ 1408  pcluster describe-cluster -n jedi-cluster
+ 1409  history 
+ 1410  pcluster delete-cluster -n jedi-cluster
+ 1411  git clone https://github.com/NOAA-EPIC/CADRE-DA-training
+ 1412  sudo apt update
+ 1413  sudo apt install -y unzip
+ 1414  curl -fsSL https://releases.hashicorp.com/packer/1.10.0/packer_1.10.0_linux_amd64.zip -o packer.zip
+ 1415  sudo unzip packer.zip -d /usr/local/bin
+ 1416  packer version
+ 1417  sudo rm /usr/local/bin/packer
+ 1418  curl -fsSL https://releases.hashicorp.com/packer/1.15.4/packer_1.15.4_linux_amd64.zip -o packer.zip
+ 1419  sudo unzip packer.zip -d /usr/local/bin
+ 1420  packer version
+ 1421  packer validate CADRE-DA-training/year2_cases/year2_aws_setup/build_da_cluster.pkr.hcl 
+ 1422  emacs CADRE-DA-training/year2_cases/year2_aws_setup/build_da_cluster.pkr.hcl &
+ 1423  packer validate CADRE-DA-training/year2_cases/year2_aws_setup/build_da_cluster.pkr.hcl 
+ 1424  mkdir packer
+ 1425  cd packer/
+ 1426  cp ../CADRE-DA-training/year2_cases/year2_aws_setup/build_da_cluster.pkr.hcl .
+ 1427  packer init build_da_cluster.pkr.hcl
+ 1428  packer validate build_da_cluster.pkr.hcl
+ 1429  cp ../CADRE-DA-training/year2_cases/year2_aws_setup/da-cluster-start-script.sh .
+ 1430  cp ../CADRE-DA-training/year2_cases/year2_aws_setup/da_hpc.yaml .
+ 1431  packer validate build_da_cluster.pkr.hcl
+ 1432  cat da-cluster-start-script.sh 
+ 1433  aws configure
+ 1434  packer init build_da_cluster.pkr.hcl
+ 1435  packer validate build_da_cluster.pkr.hcl
+ 1436  packer build build_da_cluster.pkr.hcl
+ 1437  ls
+ 1438  emacs build_da_cluster.pkr.hcl  &
+ 1439  packer validate build_da_cluster.pkr.hcl
+ 1440  packer build build_da_cluster.pkr.hcl
+ 1441  aws ec2 describe-subnets --subnet-ids subnet-0bad4b33755dc73e4 --query "Subnets[*].{ID:SubnetId,Public:MapPublicIpOnLaunch,AZ:AvailabilityZone}"
+ 1442  history >> pack-setup.txt
+ 1443  aws ec2 describe-network-acls --filters "Name=association.subnet-id,Values=subnet-0bad4b33755dc73e4"
+ 1444  aws ec2 describe-route-tables   --filters "Name=association.subnet-id,Values=subnet-0bad4b33755dc73e4"   --query "RouteTables[*].Routes"
+ 1445  aws ec2 describe-route-tables   --filters "Name=vpc-id,Values=vpc-0abc0cd0cc2423572"   --query "RouteTables[*].{ID:RouteTableId,Main:Associations[0].Main,Routes:Routes}"
+ 1446  aws ec2 associate-route-table   --route-table-id rtb-0a5cb3fd2a8643f60   --subnet-id subnet-0bad4b33755dc73e4
+ 1447  aws ec2 describe-route-tables   --filters "Name=association.subnet-id,Values=subnet-0bad4b33755dc73e4"   --query "RouteTables[*].Routes"
+ 1448  history >> pack-setup.txt
+ 1449  packer build build_da_cluster.pkr.hcl
+ 1450  ls
+ 1451  cat da_hpc.yaml
+ 1452  aws ec2 describe-subnets   --filters "Name=map-public-ip-on-launch,Values=true"   --region us-east-1   --query "Subnets[*].{ID:SubnetId,AZ:AvailabilityZone}"
+ 1453  aws ec2 describe-subnets   --filters "Name=map-public-ip-on-launch,Values=false"   --region us-east-1   --query "Subnets[*].{ID:SubnetId,AZ:AvailabilityZone}"
+ 1454  aws ec2 describe-subnets   --filters "Name=map-public-ip-on-launch,Values=false"   --region us-east-1   --query "Subnets[*].{ID:SubnetId,AZ:AvailabilityZone}"
+ 1455  aws ec2 describe-key-pairs --region us-east-1 --query "KeyPairs[*].KeyName"
+ 1456  ls ../.ssh/
+ 1457  aws ec2 create-key-pair   --region us-east-1   --key-name jong-aws-ed25519   --key-type ed25519   --query "KeyMaterial"   --output text > ~/.ssh/jong-aws-east1-ed25519.pem
+ 1458  chmod 600 ~/.ssh/jong-aws-east1-ed25519.pem
+ 1459  ls ../.ssh/
+ 1460  ssh-keygen -y -f ~/.ssh/jong-aws-east1-ed25519.pem > ~/.ssh/jong-aws-east1-ed25519.pem.pub
+ 1461  aws ec2 import-key-pair   --region us-east-1   --key-name jong-aws-east1-ed25519   --public-key-material fileb://~/.ssh/jong-aws-east1-ed25519.pem.pub
+ 1462  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1463  source ~/pcluster-venv/bin/activate
+ 1464  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1465  history | grep pcl
+ 1466  pcluster describe-cluster -n da-cluster
+ 1467  aws ec2 create-tags   --region us-east-1   --resources ami-017baf587e3dc300b   --tags Key=parallelcluster:version,Value=3.15.1
+ 1468  aws ec2 describe-images   --image-ids ami-017baf587e3dc300b   --query "Images[0].Tags"
+ 1469  pcluster delete-cluster -n da-cluster
+ 1470  history >> pack-setup-1.txt 
+ 1471  pcluster delete-cluster -n da-cluster
+ 1472  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1473  pcluster delete-cluster -n da-cluster
+ 1474  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1475  pcluster delete-cluster -n da-cluster
+ 1476  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1477  ls
+ 1478  cat build_da_cluster.pkr.hcl da-cluster-start-script.sh
+ 1479  aws s3 ls
+ 1480  aws s3 mb s3://jong-da-build-scripts
+ 1481  ls
+ 1482  cat da-cluster-start-script.sh
+ 1483  emacs install-da-stack.sh &
+ 1484  chmod +x install-da-stack.sh
+ 1485  aws s3 cp install-da-stack.sh s3://jong-da-build-scripts/
+ 1486  aws s3 cp runtime-config.sh s3://jong-da-build-scripts/
+ 1487  history 
+ 1488  pcluster delete-cluster -n da-cluster
+ 1489  pcluster build-image -i image-config.yaml -n da-jedi-image
+ 1490  pcluster build-image -c image-config.yaml -n da-jedi-image
+ 1491  cat image-config.yaml 
+ 1492  pcluster build-image -c image-config.yaml -i da-jedi-image
+ 1493  pcluster list-official-images --region us-east-1
+ 1494  pcluster build-image -c image-config.yaml -i da-jedi-image
+ 1495  pcluster version
+ 1496  source ~/pcluster-venv/bin/activate
+ 1497  pip uninstall -y aws-parallelcluster
+ 1498  pip uninstall -y pcluster
+ 1499  pip uninstall -y aws-parallelcluster-imagebuilder || true
+ 1500  pip uninstall -y aws-parallelcluster-cookbook || true
+ 1501  pip install "aws-parallelcluster==3.15.1"
+ 1502  pcluster version
+ 1503  source ~/pcluster-venv/bin/activate
+ 1504  pip uninstall -y aws-parallelcluster
+ 1505  pip uninstall -y aws-parallelcluster-imagebuilder || true
+ 1506  pip uninstall -y aws-parallelcluster-cookbook || true
+ 1507  pip uninstall -y pcluster || true
+ 1508  pip install "aws-parallelcluster==3.15.1"
+ 1509  pip show aws-parallelcluster
+ 1510  conda deactivate
+ 1511  exit
+ 1512  python3.11 -m venv pcluster-311
+ 1513  source pcluster-311/bin/activate
+ 1514  uname -a
+ 1515  which python
+ 1516  python --version
+ 1517  sudo apt update
+ 1518  sudo apt install software-properties-common
+ 1519  sudo add-apt-repository ppa:deadsnakes/ppa -y
+ 1520  sudo apt update
+ 1521  sudo apt install python3.11 python3.11-venv
+ 1522  python3.11 --version
+ 1523  python3.11 -m venv ~/pcluster-311
+ 1524  source ~/pcluster-311/bin/activate
+ 1525  pip install --upgrade pip
+ 1526  pip install "aws-parallelcluster==3.15.1"
+ 1527  pcluster version
+ 1528  pcluster build-image -c image-config.yaml -i da-jedi-image
+ 1529  cd packer/
+ 1530  pcluster build-image -c image-config.yaml -i da-jedi-image
+ 1531  cat image-config.yaml
+ 1532  conda deactivate
+ 1533  pcluster build-image -c image-config.yaml -i da-jedi-image
+ 1534  source ~/pcluster-311/bin/activate
+ 1535  cd
+ 1536  cd packer/
+ 1537  ls
+ 1538  cat install-da-stack.sh
+ 1539  scp -i ~/.ssh/jong-aws-east1-ed25519.pem install-da-stack.sh ubuntu@44.203.28.97:/home/ubuntu/
+ 1540  ls
+ 1541  cat da-cluster-start-script.sh 
+ 1542  history 
+ 1543  cd
+ 1544  ls
+ 1545  source pcluster-311/bin/activate
+ 1546  pcluster list-clusters
+ 1547  pcluster delete-cluster -n da-jedi-cluster
+ 1548  cd packer/
+ 1549  ls
+ 1550  cat ../mantari/clean.yaml
+ 1551  cd ../
+ 1552  mkdir jedi-ami
+ 1553  cd jedi-ami/
+ 1554  mkdir -p packer
+ 1555  cd packer
+ 1556  emacs da-cluster-start-script.sh &
+ 1557  packer validate ami.json
+ 1558  packer build ami.json
+ 1559  emacs ami.json &
+ 1560  packer build ami.json
+ 1561  ls
+ 1562  packer build ami.json
+ 1563  packer validate ami.json
+ 1564  packer build ami.json
+ 1565  ls
+ 1566  cd ../
+ 1567  ls
+ 1568  emacs config.yaml &
+ 1569  ls
+ 1570  pcluster create-cluster --cluster-name jedi-efa --cluster-configuration config.yaml 
+ 1571  history | grep pcl
+ 1572  pcluster delete-cluster -n jedi-efa
+ 1573  pcluster create-cluster --cluster-name jedi-efa --cluster-configuration config.yaml 
+ 1574  pcluster describe-cluster --cluster-name jedi-efa
+ 1575  pcluster list-clusters
+ 1576  aws cloudformation describe-stacks --stack-name jedi-efa
+ 1577  pcluster delete-cluster --cluster-name jedi-efa
+ 1578  pcluster list-clusters
+ 1579  pcluster create-cluster --cluster-name jedi-efa --cluster-configuration config.yaml
+ 1580  pcluster delete-cluster --cluster-name jedi-efa
+ 1581  pcluster delete-cluster --cluster-name jedi-efa --region us-east-2
+ 1582  pcluster create-cluster --cluster-name jedi-efa --cluster-configuration config.yaml
+ 1583  pcluster describe-cluster --cluster-name jedi-efa
+ 1584  pcluster list-clusters
+ 1585  aws cloudformation describe-stacks --stack-name jedi-efa
+ 1586  aws ssm get-parameters-by-path --path /aws/parallelcluster/jedi-efa
+ 1587  aws ssm get-parameters-by-path --path "/aws/parallelcluster/jedi-efa"
+ 1588  pcluster delete-cluster --cluster-name jedi-efa --region us-east-2
+ 1589  pcluster create-cluster --cluster-name jedi-efa-01 --cluster-configuration config.yaml
+ 1590  pcluster list-clusters
+ 1591  pcluster list-clusters --region us-east-2
+ 1592  aws cloudformation describe-stack-events --stack-name jedi-efa-01 --region us-east-2
+ 1593  aws cloudformation describe-stack-events --stack-name jedi-efa-01 --region us-east-2 | grep FAI
+ 1594  aws cloudformation describe-stack-events --stack-name jedi-efa-01 --region us-east-2 >> log
+ 1595  emacs log &
+ 1596  cd packer/
+ 1597  packer init .
+ 1598  packer build pcluster-ubuntu2404.pkr.hcl
+ 1599  packer init .
+ 1600  packer build pcluster-ubuntu2404.pkr.hcl
+ 1601  pcluster list-official-images --region us-east-2 --os ubuntu2404
+ 1602  packer build pcluster-ubuntu2404.pkr.hcl
+ 1603  ls
+ 1604  ls scripts/
+ 1605  packer build pcluster-ubuntu2404.pkr.hcl
+ 1606  packer validate pcluster-ubuntu2404.pkr.hcl
+ 1607  packer build pcluster-ubuntu2404.pkr.hcl
+ 1608  cd ../
+ 1609  emacs config.yaml &
+ 1610  history | grep pcl
+ 1611  pcluster list-clusters --region us-east-2
+ 1612  pcluster delete-cluster --cluster-name jedi-efa-01 --region us-east-2
+ 1613  pcluster create-cluster   --cluster-name jedi-efa-02   --cluster-configuration config.yaml   --region us-east-2
+ 1614  history | grep pcl
+ 1615  pcluster list-clusters --region us-east-2
+ 1616  history | grep des
+ 1617  pcluster describe-cluster -n jedi-efa-02
+ 1618  pcluster describe-cluster -n jedi-efa-02 --region us-east-2
+ 1619  history | grep ssh
+ 1620  ssh -i ~/.ssh/jong-aws-ed25519.pem ubuntu@18.188.99.27
+ 1621  cd
+ 1622  cd mantari
+ 1623  cat clean.yaml
+ 1624  ssh -i ~/.ssh/jong-aws-ed25519.pem ubuntu@18.188.99.27
+ 1625  conda config --set auto_activate_base false
+ 1626  source ~/pcluster-311/bin/activate
+ 1627  conda deactivate
+ 1628  which pcluster
+ 1629  cd packer/
+ 1630  pcluster build-image -c image-config.yaml -i da-jedi-image
+ 1631  python3 -c "import yaml,sys; print(yaml.safe_load(open('image-config.yaml')))"
+ 1632  pcluster build-image-v2 -c image-config.yaml -i da-jedi-image
+ 1633  pcluster build-image -c image-config.yaml -i da-jedi-image
+ 1634  pcluster create-cluster -c cluster-config.yaml -n da-jedi-cluster
+ 1635  ls
+ 1636  rm cluster-config.yaml*
+ 1637  ls
+ 1638  rm *~
+ 1639  pcluster create-cluster -c cluster-config.yaml -n da-jedi-cluster
+ 1640  aws ec2 describe-key-pairs --query "KeyPairs[*].KeyName"
+ 1641  pcluster create-cluster -c cluster-config.yaml -n da-jedi-cluster
+ 1642  pcluster describe-cluster -n da-jedi-cluster
+ 1643  pcluster get-cluster-stack-events -n da-jedi-cluster
+ 1644  pcluster get-cluster-stack-events -n da-jedi-cluster >> c.log
+ 1645  mv c.log c.out
+ 1646  more c.out 
+ 1647  emacs c.out &
+ 1648  pcluster get-cluster-stack-events -n da-jedi-cluster | grep -i CREATE_FAILED -A3 -B3
+ 1649  pcluster describe-cluster -n da-jedi-cluster
+ 1650  aws ec2 describe-subnets --subnet-ids subnet-0d92b3ed5ac832bb4 --query "Subnets[*].AvailabilityZone"
+ 1651  aws s3api get-bucket-location --bucket jong-da-build-scripts
+ 1652  aws s3 ls s3://jong-da-build-scripts/
+ 1653  aws s3 ls s3://jong-da-build-scripts/install-da-stack.sh
+ 1654  aws s3 ls s3://jong-da-build-scripts/runtime-config.sh
+ 1655  more install-da-stack.sh 
+ 1656  ls
+ 1657  history | grep pcl
+ 1658  pcluster create-cluster -c cluster-config.yaml -n da-jedi-cluster
+ 1659  history | grep pcl
+ 1660  pcluster delete-cluster -n da-jedi-cluster
+ 1661  pcluster list-clusters
+ 1662  pcluster create-cluster -c cluster-config.yaml -n da-jedi-cluster
+ 1663  pcluster describe-cluster -n da-jedi-cluster
+ 1664  ls ../.ssh/
+ 1665  chmod 600 ~/.ssh/jong-aws-east1-ed25519.pem
+ 1666  ssh -i ~/.ssh/jong-aws-east1-ed25519.pem ubuntu@44.203.28.97
+ 1667  ssh -i ~/.ssh/jong-aws-ed25519.pem ubuntu@18.188.99.27
+ 1668  history | pcl
+ 1669  exit
+ 1670  history 
+ 1671  source pcluster-311/bin/activate
+ 1672  pcluster list-clusters --gions us-east-2
+ 1673  pcluster list-clusters --regions us-east-2
+ 1674  pcluster list-clusters --region us-east-2
+ 1675  history | grep pcl
+ 1676  pcluster delete-cluster -n jedi-efa-02 --region us-east-2
+ 1677  cd packer/
+ 1678  ls
+ 1679  cat build_da_cluster.pkr.hcl 
+ 1680  ls
+ 1681  cat da_hpc.yaml
+ 1682  source pcluster-311/bin/activate
+ 1683  history | grep ssh
+ 1684  conda deactivate
+ 1685  pip install --upgrade aws-parallelcluster
+ 1686  pcluster version
+ 1687  which pcluster
+ 1688  conda deactivate
+ 1689  source pcluster-311/bin/activate
+ 1690  history | grep pcl
+ 1691  pcluster list-clusters
+ 1692  pcluster list-clusters --region us-east-2
+ 1693  pcluster list-clusters --region us-east-1
+ 1694  cat .parallelcluster/config.yaml
+ 1695  history | grep pcl | grep cre
+ 1696  source pcluster-311/bin/activate
+ 1697  ls
+ 1698  history 
+ 1699  cd mantari
+ 1700  ls
+ 1701  cat clean.yaml
+ 1702  cd ../
+ 1703  ls
+ 1704  cd packer/
+ 1705  ls
+ 1706  more da_hpc.yaml 
+ 1707  ls ../.ssh/
+ 1708  ls
+ 1709  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1710  cat da_hpc.yaml 
+ 1711  emacs da_hpc.yaml &
+ 1712  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1713  cat da_hpc.yaml
+ 1714  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1715  cat da-cluster-start-script.sh 
+ 1716  ls
+ 1717  emacs da-cluster-start-script.sh &
+ 1718  which pcluster
+ 1719  pcluster version
+ 1720  pip uninstall aws-parallelcluster -y
+ 1721  pip install aws-parallelcluster==3.15.1
+ 1722  sudo apt install python3-pip
+ 1723  pip uninstall aws-parallelcluster -y
+ 1724  pip install aws-parallelcluster==3.15.1
+ 1725  pcluster version
+ 1726  python3 -m venv ~/pcluster-venv
+ 1727  source ~/pcluster-venv/bin/activate
+ 1728  pip install aws-parallelcluster==3.15.1
+ 1729  pip install _posixsubprocess
+ 1730  sudo apt install python3.10 python3.10-venv
+ 1731  python3.10 -m venv ~/pcluster-venv
+ 1732  source ~/pcluster-venv/bin/activate
+ 1733  pip install aws-parallelcluster==3.15.1
+ 1734  pcluster version
+ 1735  which pcluster
+ 1736  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1737  more da_hpc.yaml
+ 1738  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1739  aws ec2 create-tags   --resources ami-017baf587e3dc300b   --tags Key=parallelcluster:build,Value=custom
+ 1740  aws ec2 describe-tags --filters "Name=resource-id,Values=ami-017baf587e3dc300b"
+ 1741  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1742  aws ec2 describe-images --image-ids ami-017baf587e3dc300b --region us-east-1
+ 1743  aws ec2 copy-image   --source-region us-east-1   --source-image-id ami-017baf587e3dc300b   --name "da-cluster-copy"   --region us-east-1
+ 1744  aws ec2 create-tags   --resources <new-ami-id>   --tags Key=parallelcluster:build,Value=custom
+ 1745  aws ec2 create-tags   --resources ami-005ae32c40a6a5584   --tags Key=parallelcluster:build,Value=custom
+ 1746  pcluster create-cluster -n da-cluster -c da_hpc.yaml
+ 1747  pcluster describe-cluster -n da-cluster
+ 1748  ls
+ 1749  history 
+ 1750  pcluster delete-cluster -n da-cluster
+ 1751  ls
+ 1752  rm *~
+ 1753  ls
+ 1754  rm c.out 
+ 1755  ls
+ 1756  more cluster-config.yaml 
+ 1757  ls
+ 1758  more runtime-config.sh 
+ 1759  ls
+ 1760  cat build_da_cluster.pkr.hcl 
+ 1761  aws sts get-caller-identity
+ 1762  packer init build_da_cluster.pkr.hcl
+ 1763  packer validate build_da_cluster.pkr.hcl
+ 1764  packer build build_da_cluster.pkr.hcl
+ 1765  ls
+ 1766  history 
+ 1767  packer build build_da_cluster.pkr.hcl
+ 1768  ls
+ 1769  packer build build_da_cluster.pkr.hcl
+ 1770  ls
+ 1771  emacs spack-cluster-start-script.sh &
+ 1772  packer build build_da_cluster.pkr.hcl
+ 1773  ls
+ 1774  cp spack-cluster-start-script.sh spack-cluster-start-script.sh.del
+ 1775  packer build build_da_cluster.pkr.hcl
+ 1776  ls
+ 1777  cp spack-cluster-start-script.sh spack-cluster-start-script.sh.2
+ 1778  packer build build_da_cluster.pkr.hcl
+ 1779  cd
+ 1780  mksir spack-stack
+ 1781  mkdir spack-stack
+ 1782  cd spack-stack/
+ 1783  git clone -b release/1.9.0 --recurse-submodules https://github.com/jcsda/spack-stack.git
+ 1784  cd spack-stack
+ 1785  source ./setup.sh
+ 1786  spack stack create env --site linux.default --template unified-dev   --name test-env --compiler gcc
+ 1787  cat > envs/test-env/modules.yaml <<'EOF'
+ 1788  modules:
+ 1789    default:
+ 1790      enable::
+ 1791        - lmod
+ 1792      lmod:
+ 1793        include:
+ 1794          - python
+ 1795          - openssl
+ 1796  EOF
+ 1797  cat > envs/test-env/site/modules.yaml <<'EOF'
+ 1798  modules:
+ 1799    default:
+ 1800      enable::
+ 1801        - lmod
+ 1802      lmod:
+ 1803        include:
+ 1804          - python
+ 1805          - openssl
+ 1806  EOF
+ 1807  cd envs/test-env
+ 1808  spack env activate -p .
+ 1809  spack concretize
+ 1810  cd ../
+ 1811  ls
+ 1812  git branch
+ 1813  ls
+ 1814  cd configs/
+ 1815  ls
+ 1816  cd sites/
+ 1817  ls
+ 1818  ls -R
+ 1819  cd tier2/linux.default/
+ 1820  ls
+ 1821  cd
+ 1822  ls /usr/share/lmod/
+ 1823  wget https://sourceforge.net/projects/lmod/files/Lmod-8.7.tar.bz2
+ 1824  tar vxjf Lmod-8.7.tar.bz2
+ 1825  cd Lmod-8.7
+ 1826  ./configure --prefix=/usr/share && make install
+ 1827  sudo apt-get update
+ 1828  sudo apt-get install -y tcl-dev tcl8.6-dev tcl8.6
+ 1829  ./configure --prefix=/usr/share && make install
+ 1830  apt install -y lua5.3
+ 1831  sudo apt install -y lua5.3
+ 1832  sudo apt install -y liblua5.3-dev
+ 1833  sudo apt install -y lua-posix
+ 1834  ./configure --prefix=/usr/share && make install
+ 1835  sudo ./configure --prefix=/usr/share && make install
+ 1836  sudo ./configure --prefix=/usr/share && sudo make install
+ 1837  ls /usr/share/lmod/lmod/init/profile
+ 1838  ls  /etc/profile.d/
+ 1839  ln -s /usr/share/lmod/lmod/init/profile /etc/profile.d/z00_lmod.sh
+ 1840  sudo ln -s /usr/share/lmod/lmod/init/profile /etc/profile.d/z00_lmod.sh
+ 1841  ls  /etc/profile.d/
+ 1842  more  /etc/profile.d/z00_lmod.sh 
+ 1843  source  /etc/profile.d/z00_lmod.sh 
+ 1844  which lmond
+ 1845  which lmod
+ 1846  module 
+ 1847  cat /usr/share/lmod/lmod/init/profile
+ 1848  DEBIAN_FRONTEND=noninteractive apt-get install -y emacs-nox
+ 1849  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y emacs-nox
+ 1850  cd
+ 1851  cd packer/
+ 1852  ls
+ 1853  cd ../
+ 1854  ls
+ 1855  more clean.yaml
+ 1856  ls
+ 1857  cd mantari
+ 1858  ls
+ 1859  more clean.yaml
+ 1860  grep east-1 *
+ 1861  ls
+ 1862  cd ../
+ 1863  ls
+ 1864  cd jedi-ami/
+ 1865  ls
+ 1866  more config.yaml
+ 1867  ls
+ 1868  cd ../
+ 1869  history | grep ssh
+ 1870  ls
+ 1871  cd jedi-ami/
+ 1872  ls
+ 1873  cd packer/
+ 1874  ls
+ 1875  cd ../
+ 1876  ls
+ 1877  cd ../
+ 1878  ls
+ 1879  cd packer/
+ 1880  ls
+ 1881  more da_hpc.yaml 
+ 1882  cat da_hpc.yaml 
+ 1883  cd
+ 1884  ls
+ 1885  ls -al
+ 1886  history | grep source
+ 1887  cd packer/
+ 1888  ls
+ 1889  emacs spack-stack-install.sh &
+ 1890  cd packer/
+ 1891  ls
+ 1892  cp spack-cluster-start-script.sh.2 cluster-start-stack-script.sh
+ 1893  emacs cluster-start-stack-script.sh &
+ 1894  cd
+ 1895  source pcluster-venv/bin/activate
+ 1896  cd packer/
+ 1897  history 
+ 1898  cat build_da_cluster.pkr.hcl
+ 1899  packer build build_da_cluster.pkr.hcl
+ 1900  cat da_hpc.yaml 
+ 1901  pcluster validate east1.config 
+ 1902  cat east1.config 
+ 1903  conda deactivate
+ 1904  pcluster create-cluster -n da-cluster -c east1.config
+ 1905  history | grep pcl | grep des
+ 1906  pcluster describe-cluster -n da-cluster --region us-east-1
+ 1907  history | grep pcl | grep del
+ 1908  pcluster delete-cluster -n da-cluster --region us-east-1
+ 1909  packer build build_da_cluster.pkr.hcl
+ 1910  ls
+ 1911  history | grep pcl
+ 1912  pcluster create-cluster -n da-cluster-01 -c east1.config
+ 1913  history 
+ 1914  pcluster describe-cluster -n da-cluster-01 --region us-east-1
+ 1915  history 
+ 1916  pcluster delete-cluster -n da-cluster-01 --region us-east-1
+ 1917  history 
+ 1918  cat build_da_cluster.pkr.hcl
+ 1919  packer build build_da_cluster.pkr.hcl
+ 1920  history 
+ 1921  pcluster delete-cluster -n da-cluster-02 --region us-east-1
+ 1922  pcluster create-cluster -n da-cluster-02 -c east1.config
+ 1923  pcluster describe-cluster -n da-cluster-02 --region us-east-1
+ 1924  history 
+ 1925  pcluster delete-cluster -n da-cluster-02 --region us-east-1
+ 1926  pcluster delete-cluster -n da-cluster-03 --region us-east-1
+ 1927  history 
+ 1928  pcluster create-cluster -n da-cluster-03 -c east1.config
+ 1929  history 
+ 1930  pcluster describe-cluster -n da-cluster-03 --region us-east-1
+ 1931  ssh -i jong-aws-east1-ed25519.pem ubuntu@100.57.90.77
+ 1932  ssh -i ../.ssh/jong-aws-east1-ed25519.pem ubuntu@100.57.90.77
+ 1933  ssh -i ../.ssh/jong-aws-east1-ed25519.pem ubuntu@98.84.35.96
+ 1934  cd ../
+ 1935  scp -r packer jongkim@orion-login.hpc.msstate.edu:/work2/noaa/epic/jongkim
+ 1936  cd packer/
+ 1937  ls
+ 1938  history | grep scp
+ 1939  scp -i ../.ssh/jong-aws-east1-ed25519.pem ubuntu@98.84.35.96:/home/ubuntu/spack-v193.sh .
+ 1940  cd
+ 1941  ssh-or
+ 1942  cd spack-stack/
+ 1943  cd ye
+ 1944  cd temp/
+ 1945  ls
+ 1946  rm -rf *
+ 1947  git clone https://github.com/JCSDA/spack-stack.git /opt/spack-stack-2.1
+ 1948  cd /opt/spack-stack-2.1
+ 1949  git checkout release/2.1
+ 1950  git submodule update --init --recursive
+ 1951  git clone https://github.com/JCSDA/spack-stack.git /opt/spack-stack-2.1
+ 1952  git clone https://github.com/JCSDA/spack-stack.git --recursive
+ 1953  cd spack-stack/'fd fv3 | grep jedi | grep env
+ 1954  cd spack-stack/
+ 1955  fd fv3 | grep jedi | grep env
+ 1956  cd
+ 1957  cd spack-stack/
+ 1958  cd temp/
+ 1959  rm -rf *
+ 1960  git clone --recurse-submodules -b 1.9.3 https://github.com/JCSDA/spack-stack.git 
+ 1961  ls
+ 1962  cd spack-stack/
+ 1963  ls
+ 1964  cd spack-ext/
+ 1965  ls
+ 1966  cd repos/
+ 1967  ls
+ 1968  cd spack-stack/
+ 1969  ls
+ 1970  cd ../
+ 1971  ls
+ 1972  cd ../
+ 1973  ls
+ 1974  cd spack
+ 1975  ls
+ 1976  cd ../
+ 1977  ls
+ 1978  cd configs/
+ 1979  ls
+ 1980  cd sites/
+ 1981  ls
+ 1982  cd tier2/
+ 1983  ls
+ 1984  cd aws-ubuntu2404/
+ 1985  ls
+ 1986  cd ../../
+ 1987  cd ../
+ 1988  ls -R
+ 1989  cd spack-ext/
+ 1990  ls -R
+ 1991  cd
+ 1992  cat .bashrc
+ 1993  history 
+ 1994  history | grep ssh
+ 1995  ssh -i ~/.ssh/jong-aws-east1-ed25519.pem ubuntu@35.170.62.27
+ 1996  ssh -i ~/.ssh/jong-aws-east1-ed25519.pem ubuntu@3.239.165.193
+ 1997  emacs mike.txt
+ 1998  cat mike.txt
+ 1999  cd packer/
+ 2000  ls
+ 2001  cat ssh-info.txt
+ 2002  cd merge_mantari/
+ 2003  cat aws_east1.config 
+ 2004  ls
+ 2005  cd ../
+ 2006  ls
+ 2007  history | grep scp
+ 2008  scp -r merge_mantari/ jongkim@orion-login.hpc.msstate.edu:/work2/noaa/epic/jongkim
+ 2009  history
+ 2010  history >> merge_mantari/hist.txt
