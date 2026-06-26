@@ -53,19 +53,6 @@ variable "aws_ssh_username" {
   default     = "ubuntu"
 }
 
-#variable "aws_source_ami_filter_ubuntu_2204_hvm" {
-#  description = "Object with source AMI filters for Ubuntu 22.04"
-#  type = object({
-#    name   = string
-#    owners = list(string)
-#  })
-#  default = {
-#    name = "aws-parallelcluster-3.15.1-ubuntu-2204-lts-hvm-x86_64-*"
-#    owners = [
-#      "247102896272"
-#    ]
-#  }
-#}
 variable "aws_source_ami_filter_ubuntu_2404_hvm" {
   description = "Object with source AMI filters for Ubuntu 24.04"
   type = object({
@@ -155,18 +142,17 @@ source "amazon-ebs" "base" {
 build {
   source "amazon-ebs.base" {
     ami_description = "DA Cluster"
-    name            = "DA-Cluster-Ubuntu-22.04-hvm"
+    name            = "DA-Cluster-Ubuntu-24.04-hvm"
     source_ami_filter {
       filters = {
         virtualization-type = "hvm"
-        name                = var.aws_source_ami_filter_ubuntu_2204_hvm.name
+        name                = var.aws_source_ami_filter_ubuntu_2404_hvm.name
         root-device-type    = "ebs"
       }
-      owners      = var.aws_source_ami_filter_ubuntu_2204_hvm.owners
+      owners      = var.aws_source_ami_filter_ubuntu_2404_hvm.owners
       most_recent = true
     }
   }
-
   provisioner "shell" {
     execute_command = "{{ .Vars }} sudo -E '{{ .Path }}'"
     script          = "${path.root}/../scripts/spack_stackv2.1_ubuntu24.04_gcc.sh"
