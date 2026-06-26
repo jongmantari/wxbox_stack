@@ -53,16 +53,30 @@ variable "aws_ssh_username" {
   default     = "ubuntu"
 }
 
-variable "aws_source_ami_filter_ubuntu_2204_hvm" {
-  description = "Object with source AMI filters for Ubuntu 22.04"
+#variable "aws_source_ami_filter_ubuntu_2204_hvm" {
+#  description = "Object with source AMI filters for Ubuntu 22.04"
+#  type = object({
+#    name   = string
+#    owners = list(string)
+#  })
+#  default = {
+#    name = "aws-parallelcluster-3.15.1-ubuntu-2204-lts-hvm-x86_64-*"
+#    owners = [
+#      "247102896272"
+#    ]
+#  }
+#}
+variable "aws_source_ami_filter_ubuntu_2404_hvm" {
+  description = "Object with source AMI filters for Ubuntu 24.04"
   type = object({
     name   = string
     owners = list(string)
   })
+
   default = {
-    name = "aws-parallelcluster-3.15.1-ubuntu-2204-lts-hvm-x86_64-*"
+    name = "ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*"
     owners = [
-      "247102896272"
+      "099720109477"
     ]
   }
 }
@@ -155,7 +169,7 @@ build {
 
   provisioner "shell" {
     execute_command = "{{ .Vars }} sudo -E '{{ .Path }}'"
-    script          = "${path.root}/../scripts/cluster-start-stack-script.sh"
+    script          = "${path.root}/../scripts/spack_stackv2.1_ubuntu24.04_gcc.sh"
     valid_exit_codes = [0,1,2]
   }
 }
