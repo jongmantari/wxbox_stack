@@ -193,8 +193,19 @@ cd lua-5.1.4.9
 make VERBOSE=1 \
     2>&1 | tee log.make
 
-make install \
-    2>&1 | tee log.install
+make install 2>&1 | tee log.install
+
+export PATH=/opt/lua/5.1.4.9/bin:$PATH
+export LD_LIBRARY_PATH=/opt/lua/5.1.4.9/lib:${LD_LIBRARY_PATH:-}
+
+echo "===== LUA CHECK ====="
+which lua
+lua -v
+
+if [ ! -x /opt/lua/5.1.4.9/bin/lua ]; then
+    echo "Lua installation failed"
+    exit 1
+fi
 
 ###############################################################################
 # Configure Lua Environment
