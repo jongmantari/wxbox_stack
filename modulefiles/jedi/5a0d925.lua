@@ -13,7 +13,7 @@ load("stack-gcc/13.3.0")
 load("stack-openmpi/5.0.8")
 load("jedi-fv3-env/1.0.0")
 
-local root="/home/jonggyunkim/git/jedi-build/jedi-bundle/build"
+local root="/opt/jedi-bundle/jedi-bundle/build"
 
 setenv("JEDI_BUNDLE_ROOT", root)
 
