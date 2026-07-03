@@ -45,12 +45,12 @@ User Workflows
 
 # Documentation
 
-- docs/getting-started.md — New user quickstart
-- docs/architecture.md — System architecture
-- docs/ami-catalog.md — Available AMIs
-- docs/build-guide.md — AMI build process
-- docs/user-guide.md — FV3-JEDI environment usage and module loading
-- docs/roadmap.md — Project roadmap
+- [New user quickstart](docs/getting-started.md)
+- [System architecture](docs/architecture.md)
+- [Available AMIs](docs/ami-catalog.md)
+- [AMI build process](docs/build-guide.md)
+- [FV3-JEDI environment usage and module loading](docs/user-guide.md)
+- [Project roadmap](docs/roadmap.md)
 ---
 
 # Quick Start
