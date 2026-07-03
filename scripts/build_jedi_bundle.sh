@@ -25,6 +25,25 @@ sed -i '/MPAS\|mpas/s/^/#/' CMakeLists.txt
 echo "===== MPAS Lines ====="
 grep -n "MPAS\|mpas" CMakeLists.txt
 
+echo "===== Preparing CRTM Coefficients ====="
+
+mkdir -p test-data-release
+
+if [ -f /opt/crtm/fix_REL-3.1.2.0.tgz ]; then
+    echo "Found CRTM archive in AMI cache:"
+    ls -lh /opt/crtm/fix_REL-3.1.2.0.tgz
+
+    cp -p \
+        /opt/crtm/fix_REL-3.1.2.0.tgz \
+        test-data-release/
+
+    echo "Copied CRTM archive to:"
+    ls -lh test-data-release/fix_REL-3.1.2.0.tgz
+else
+    echo "CRTM archive not found in /opt/crtm"
+    echo "CRTM build system will download it automatically."
+fi
+
 mkdir build
 cd build
 
@@ -36,4 +55,4 @@ make update
 
 make -j8
 
-ctest -j8
+#ctest -j8

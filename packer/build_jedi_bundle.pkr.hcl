@@ -53,7 +53,8 @@ source "amazon-ebs" "jedi_bundle" {
   associate_public_ip_address = true
 
   # Existing DA Cluster AMI
-  source_ami = "ami-0e61dd6c08a3d8fde"
+  # source_ami = "ami-0e61dd6c08a3d8fde"
+  source_ami = "ami-04adc9a7b3950ead0"
 
   ami_name        = "jedi-bundle-${local.now}"
   ami_description = "JEDI Bundle build based on DA Cluster AMI"
@@ -71,12 +72,11 @@ source "amazon-ebs" "jedi_bundle" {
 
   tags = {
     Name          = "JEDI-Bundle"
-    BaseAMI       = "ami-0e61dd6c08a3d8fde"
+    BaseAMI       = "ami-04adc9a7b3950ead0"
     Stack         = "fv3-jedi-2.1"
     BundleCommit  = "5a0d9257a258b9954a44593285df20add0d6416d"
     BuiltByPacker = "true"
   }
-}
 
 build {
 
