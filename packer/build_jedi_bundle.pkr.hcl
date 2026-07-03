@@ -40,6 +40,9 @@ variable "aws_temporary_security_group_source_cidrs" {
 
 source "amazon-ebs" "jedi_bundle" {
 
+  # IMPORTANT: Use the AWS profile that owns the DA cluster AMI
+  profile = "mantari"
+
   region        = var.aws_region
   instance_type = var.aws_instance_type
 
@@ -49,10 +52,11 @@ source "amazon-ebs" "jedi_bundle" {
   communicator                = "ssh"
   associate_public_ip_address = true
 
+  # Existing DA Cluster AMI
   source_ami = "ami-0e61dd6c08a3d8fde"
 
   ami_name        = "jedi-bundle-${local.now}"
-  ami_description = "JEDI Bundle prebuilt on Spack Stack FV3-JEDI 2.1"
+  ami_description = "JEDI Bundle build based on DA Cluster AMI"
 
   launch_block_device_mappings {
     device_name           = "/dev/sda1"
@@ -66,9 +70,11 @@ source "amazon-ebs" "jedi_bundle" {
   temporary_security_group_source_cidrs = var.aws_temporary_security_group_source_cidrs
 
   tags = {
-    Name       = "JEDI-Bundle"
-    Stack      = "fv3-jedi-2.1"
-    JediBundle = "5a0d9257a258b9954a44593285df20add0d6416d"
+    Name          = "JEDI-Bundle"
+    BaseAMI       = "ami-0e61dd6c08a3d8fde"
+    Stack         = "fv3-jedi-2.1"
+    BundleCommit  = "5a0d9257a258b9954a44593285df20add0d6416d"
+    BuiltByPacker = "true"
   }
 }
 
@@ -95,7 +101,8 @@ build {
 
   provisioner "shell" {
     inline = [
-      "echo 'Build complete'",
+      "echo '===== Installed JEDI Bundle ====='",
+      "ls -ld /opt/jedi-bundle",
       "du -sh /opt/jedi-bundle || true"
     ]
   }
