@@ -45,16 +45,16 @@ source "amazon-ebs" "crtm_base" {
   region        = var.aws_region
   instance_type = var.aws_instance_type
 
-  ssh_username = var.aws_ssh_username
-  ssh_timeout  = "120m"
-
   communicator                = "ssh"
   associate_public_ip_address = true
+
+  ssh_username = var.aws_ssh_username
+  ssh_timeout  = "120m"
 
   source_ami = "ami-0e61dd6c08a3d8fde"
 
   ami_name        = "da-cluster-crtm-${local.now}"
-  ami_description = "DA Cluster AMI with CRTM coefficient archive"
+  ami_description = "DA Cluster with CRTM coefficient archive"
 
   launch_block_device_mappings {
     device_name           = "/dev/sda1"
@@ -65,8 +65,7 @@ source "amazon-ebs" "crtm_base" {
     throughput            = 1000
   }
 
-  temporary_security_group_source_cidrs =
-    var.aws_temporary_security_group_source_cidrs
+  temporary_security_group_source_cidrs = var.aws_temporary_security_group_source_cidrs
 
   tags = {
     Name      = "DA-Cluster-CRTM"
@@ -94,7 +93,14 @@ build {
       "sudo mkdir -p /opt/crtm",
       "sudo mv /tmp/fix_REL-3.1.2.0.tgz /opt/crtm/",
       "sudo chmod 644 /opt/crtm/fix_REL-3.1.2.0.tgz",
-      "ls -lh /opt/crtm/"
+      "ls -lh /opt/crtm"
+    ]
+  }
+
+  provisioner "shell" {
+    inline = [
+      "echo 'CRTM installation complete'",
+      "du -sh /opt/crtm"
     ]
   }
 }
