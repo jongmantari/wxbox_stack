@@ -1,129 +1,110 @@
 # Roadmap
 
-## Phase 1 — Base Infrastructure
+## Phase 1 — DA Cluster AMI
 
-Status: Complete
-
-Components:
-
-- Packer
-- Ubuntu
-- Intel oneAPI
-- Intel MPI
-- GCC
-- Lmod
-- Build tools
-
-Output:
+Status:
 
 ```text
-Base HPC AMI
+Complete
 ```
 
----
+Deliverables:
 
-## Phase 2 — AWS ParallelCluster
-
-Status: Complete
-
-Components:
-
-- ParallelCluster
-- Slurm
-- AWS infrastructure
-
-Output:
-
-```text
-Running Cluster
-```
-
----
-
-## Phase 3 — FV3-JEDI Environment
-
-Status: Complete
-
-Components:
-
+- Ubuntu 24.04
 - Spack Stack 2.1
-- FV3-JEDI dependencies
-- Compiler configuration
-- JEDI modules
+- GCC 13.3.0
+- OpenMPI 5.0.8
 
-Output:
+---
+
+## Phase 2 — CRTM Base AMI
+
+Status:
 
 ```text
-FV3-JEDI Runtime Environment
+Complete
 ```
+
+Deliverables:
+
+- Cached CRTM coefficient archive
 
 ---
 
-## Phase 4 — Automated FV3-JEDI AMI
+## Phase 3 — JEDI Bundle AMI
 
-Status: In Progress
-
-Goal:
+Status:
 
 ```text
-Packer
-    │
-    ├── Base Stack
-    ├── Spack Stack 2.1
-    └── FV3-JEDI
-          │
-          ▼
-      Final AMI
+Complete
 ```
 
-Desired result:
+Deliverables:
 
-- No manual software installation
-- No manual AMI snapshot process
+- FV3-JEDI Bundle
+- FV3 executables
+- JEDI runtime environment
 
-Single command:
+---
 
-```bash
-packer build build_fv3jedi_ami.pkr.hcl
+## Phase 4 — ParallelCluster Integration
+
+Status:
+
+```text
+Complete
+```
+
+Deliverables:
+
+- Slurm scheduler
+- Shared storage
+- AWS automation
+
+---
+
+## Phase 5 — MPAS-JEDI
+
+Status:
+
+```text
+Planned
 ```
 
 ---
 
-## Phase 5 — Additional JEDI Applications
+## Phase 6 — SOCA
 
-Planned:
+Status:
 
-- MPAS-JEDI
-- SOCA
-
----
-
-## Phase 6 — UFS Weather Model
-
-Planned:
-
-- UFS build environment
-- Regression testing
-- Development platform
+```text
+Planned
+```
 
 ---
 
-## Phase 7 — Local Development Platform
+## Phase 7 — UFS Weather Model
+
+Status:
+
+```text
+Planned
+```
+
+---
+
+## Phase 8 — Local Development Platform
 
 Target:
 
 ```text
 WSL
-    │
-    ├── Intel oneAPI
-    ├── Lmod
-    ├── Spack Stack
-    └── FV3-JEDI
+Linux Workstations
+Developer Laptops
 ```
 
-Purpose:
+Goals:
 
-- Local development
-- Compiler testing
+- Local FV3-JEDI development
 - Spack validation
 - Reduced AWS dependency

@@ -1,119 +1,69 @@
 # WxBox Stack
 
-WxBox Stack provides a reproducible AWS platform for building and deploying FV3-JEDI development environments using:
+WxBox Stack provides reproducible AWS environments for FV3-JEDI development and experimentation.
 
-- Packer
+The project automates creation of:
+
+- DA Cluster AMI
+- CRTM Base AMI
+- JEDI Bundle AMI
+- AWS ParallelCluster environments
+
+using:
+
 - AWS EC2
 - AWS ParallelCluster
-- Intel oneAPI
-- Lmod
-- Spack Stack
-
-Current support:
-
-- FV3-JEDI
+- Packer
 - Spack Stack 2.1
-- AWS AMI automation
-
-Future support:
-
-- MPAS-JEDI
-- SOCA
-- UFS Weather Model
+- FV3-JEDI
+- Lmod
 
 ---
 
-# Repository Layout
+# Architecture
 
 ```text
-wxbox_stack/
-├── aws/
-│   └── aws_east1.config
-│
-├── docs/
-│   ├── architecture.md
-│   ├── usage.md
-│   └── roadmap.md
-│
-├── packer/
-│   └── build_da_cluster.pkr.hcl
-│
-├── scripts/
-│   ├── cluster-start-stack-script.sh
-│   ├── spack-v193.sh
-│   ├── spack-v210.sh
-│   └── spack-v210.01.sh
-│
-└── tests/
-```
-
----
-
-# Current Workflow
-
-```text
-Packer
-    │
-    ▼
-build_da_cluster.pkr.hcl
-    │
-    ▼
-cluster-start-stack-script.sh
-    │
-    ▼
-Base HPC AMI
-    │
-    ▼
+Ubuntu 24.04
+      │
+      ▼
+DA Cluster AMI
+      │
+      ▼
+CRTM Base AMI
+      │
+      ▼
+JEDI Bundle AMI
+      │
+      ▼
 AWS ParallelCluster
-    │
-    ▼
-aws_east1.config
-    │
-    ▼
-Cluster Deployment
-    │
-    ▼
-spack-v210.01.sh
-    │
-    ▼
-FV3-JEDI Environment
-    │
-    ▼
-Manual AMI Creation
+      │
+      ▼
+User Workflows
 ```
 
 ---
 
-# Build Base AMI
+# Documentation
 
-Initialize:
-
-```bash
-cd packer
-
-packer init .
-```
-
-Validate:
-
-```bash
-packer validate build_da_cluster.pkr.hcl
-```
-
-Build:
-
-```bash
-packer build build_da_cluster.pkr.hcl
-```
+| Document | Purpose |
+|-----------|----------|
+| docs/getting-started.md | New user quickstart |
+| docs/architecture.md | System architecture |
+| docs/ami-catalog.md | Available AMIs |
+| docs/build-guide.md | AMI build process |
+| docs/user-guide.md | JEDI usage guide |
+| docs/roadmap.md | Project roadmap |
 
 ---
 
-# Create AWS ParallelCluster
+# Quick Start
 
-Activate environment:
+Configure AWS:
 
 ```bash
-conda activate pcluster311
+aws configure --profile mantari
+
+AWS_PROFILE=mantari aws sts get-caller-identity
 ```
 
 Create cluster:
@@ -124,19 +74,6 @@ pcluster create-cluster \
     --cluster-configuration aws/aws_east1.config
 ```
 
-Monitor:
-
-```bash
-pcluster list-clusters
-```
-
-Describe:
-
-```bash
-pcluster describe-cluster \
-    --cluster-name da-cluster
-```
-
 Connect:
 
 ```bash
@@ -144,67 +81,23 @@ pcluster ssh \
     --cluster-name da-cluster
 ```
 
-Delete:
+Load JEDI:
 
 ```bash
-pcluster delete-cluster \
-    --cluster-name da-cluster
+module use ~/modulefiles
+
+module load jedi/5a0d925
+```
+
+Verify:
+
+```bash
+which fv3jedi_var.x
 ```
 
 ---
 
-# Install FV3-JEDI
-
-On the cluster head node:
-
-```bash
-sudo bash scripts/spack-v210.01.sh
-```
-
-This installs:
-
-- Intel oneAPI
-- Lmod
-- Spack Stack 2.1
-- FV3-JEDI environment
-- JEDI modulefiles
-
----
-
-# Create FV3-JEDI AMI
-
-Current workflow:
-
-```bash
-aws ec2 create-image \
-    --instance-id i-xxxxxxxxxxxxxxxxx \
-    --name fv3jedi-spack21 \
-    --no-reboot
-```
-
----
-
-# Future Goal
-
-Automate FV3-JEDI AMI creation directly through Packer:
-
-```text
-Packer
- ├── cluster-start-stack-script.sh
- └── spack-v210.01.sh
-          │
-          ▼
-      FV3-JEDI AMI
-```
-
-Target command:
-
-```bash
-packer build build_fv3jedi_ami.pkr.hcl
-```
-
----
-
-# Contact for information
+# Contact
 
 jong@mantari.com
+`
