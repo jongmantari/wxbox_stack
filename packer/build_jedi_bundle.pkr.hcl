@@ -40,24 +40,21 @@ variable "aws_temporary_security_group_source_cidrs" {
 
 source "amazon-ebs" "jedi_bundle" {
 
-  # IMPORTANT: Use the AWS profile that owns the DA cluster AMI
   profile = "mantari"
 
   region        = var.aws_region
   instance_type = var.aws_instance_type
 
-  ssh_username = var.aws_ssh_username
-  ssh_timeout  = "120m"
-
   communicator                = "ssh"
   associate_public_ip_address = true
 
-  # Existing DA Cluster AMI
-  # source_ami = "ami-0e61dd6c08a3d8fde"
+  ssh_username = var.aws_ssh_username
+  ssh_timeout  = "120m"
+
   source_ami = "ami-04adc9a7b3950ead0"
 
   ami_name        = "jedi-bundle-${local.now}"
-  ami_description = "JEDI Bundle build based on DA Cluster AMI"
+  ami_description = "JEDI Bundle build based on CRTM-enabled DA Cluster AMI"
 
   launch_block_device_mappings {
     device_name           = "/dev/sda1"
@@ -77,6 +74,7 @@ source "amazon-ebs" "jedi_bundle" {
     BundleCommit  = "5a0d9257a258b9954a44593285df20add0d6416d"
     BuiltByPacker = "true"
   }
+}
 
 build {
 
@@ -102,7 +100,7 @@ build {
   provisioner "shell" {
     inline = [
       "echo '===== Installed JEDI Bundle ====='",
-      "ls -ld /opt/jedi-bundle",
+      "ls -ld /opt/jedi-bundle || true",
       "du -sh /opt/jedi-bundle || true"
     ]
   }
