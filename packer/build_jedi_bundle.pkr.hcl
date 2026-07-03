@@ -25,7 +25,7 @@ variable "aws_ssh_username" {
 
 variable "aws_instance_type" {
   type    = string
-  default = "c5n.9xlarge"
+  default = "c5n.4xlarge"
 }
 
 variable "root_volume_size" {
@@ -84,24 +84,17 @@ build {
     "source.amazon-ebs.jedi_bundle"
   ]
 
-  provisioner "file" {
-    source      = "${path.root}/../scripts/build_jedi_bundle.sh"
-    destination = "/tmp/build_jedi_bundle.sh"
-  }
-
   provisioner "shell" {
-    inline = [
-      "chmod +x /tmp/build_jedi_bundle.sh",
-      "mkdir -p /opt",
-      "/tmp/build_jedi_bundle.sh /opt/jedi-bundle"
-    ]
+    execute_command = "sudo -E bash '{{ .Path }}'"
+    script          = "${path.root}/../scripts/build_jedi_bundle.sh"
   }
 
   provisioner "shell" {
     inline = [
       "echo '===== Installed JEDI Bundle ====='",
       "ls -ld /opt/jedi-bundle || true",
-      "du -sh /opt/jedi-bundle || true"
+      "du -sh /opt/jedi-bundle || true",
+      "ls -lh /opt/crtm || true"
     ]
   }
 }

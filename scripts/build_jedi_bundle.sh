@@ -55,4 +55,4 @@ make update
 
 make -j8
 
-#ctest -j8
+ctest -j8
