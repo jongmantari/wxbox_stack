@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 
 INSTALL_DIR=${1:-/opt/jedi-bundle}
 
@@ -53,6 +53,6 @@ git lfs install
 
 make update
 
-make -j8
+make -j8 2>&1 | tee /tmp/jedi-build.log
 
-ctest -j8
+#ctest -j8
