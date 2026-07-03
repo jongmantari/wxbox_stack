@@ -5,7 +5,7 @@ WxBox Stack provides reproducible AWS environments for FV3-JEDI development and 
 The project automates creation of:
 
 - DA SPACK Stack Cluster AMI
-- CRTM Coeff Base AMI
+- CRTM Coeff file Base AMI
 - JEDI Bundle AMI
 - AWS ParallelCluster environments
 
@@ -26,10 +26,10 @@ using:
 Ubuntu 24.04
       │
       ▼
-DA Cluster AMI
+DA SPACK Stack Cluster AMI
       │
       ▼
-CRTM Base AMI
+CRTM Coeff file Base AMI
       │
       ▼
 JEDI Bundle AMI
