@@ -1,9 +1,7 @@
 #!/bin/bash
 
-source /opt/lmod/lmod/init/profile
-
-if [ -d /opt/spack-stack ]; then
-    source /opt/spack-stack/setup.sh
+if [ -f /opt/lmod/lmod/init/profile ]; then
+    source /opt/lmod/lmod/init/profile
 fi
 
 exec "$@"
