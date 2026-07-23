@@ -47,7 +47,7 @@ RUN chmod +x /tmp/scripts/*.sh
 RUN /tmp/scripts/install_lua.sh
 
 ENV PATH=/opt/lua/bin:${PATH}
-ENV LD_LIBRARY_PATH=/opt/lua/lib:${LD_LIBRARY_PATH}
+ENV LD_LIBRARY_PATH=/opt/lua/lib:${LD_LIBRARY_PATH:-}
 
 RUN which lua && lua -v
 RUN which luac
