@@ -31,7 +31,7 @@ RUN apt-get update && \
         gnupg2 \
         file
 
-COPY scripts /tmp/scripts
+COPY Docker/scripts /tmp/scripts
 
 RUN chmod +x /tmp/scripts/*.sh
 
@@ -41,7 +41,7 @@ RUN /tmp/scripts/install_lmod.sh
 
 RUN /tmp/scripts/install_spack_stack.sh
 
-COPY scripts/entrypoint.sh /entrypoint.sh
+COPY Docker/scripts/entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
