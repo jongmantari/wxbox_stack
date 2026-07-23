@@ -1,26 +1,80 @@
 #!/bin/bash
-set -e
+set -euo pipefail
+
+###############################################################################
+# Initialize Lmod
+###############################################################################
+
+source /opt/lmod/lmod/init/profile
+
+###############################################################################
+# Clone Spack Stack
+###############################################################################
 
 cd /opt
 
 git clone \
-  -b release/2.1 \
-  --recursive \
-  https://github.com/jcsda/spack-stack.git
+    -b release/2.1 \
+    --recursive \
+    https://github.com/jcsda/spack-stack.git
 
-cd spack-stack
+cd /opt/spack-stack
 
 source setup.sh
 
-spack stack create env \
-     --site linux.default \
-     --name fv3jedi \
-     --compiler gcc
+###############################################################################
+# Create Environment
+###############################################################################
 
-cd envs/fv3jedi
+spack stack create env \
+    --site linux.default \
+    --name fv3jedi \
+    --compiler gcc
+
+cd /opt/spack-stack/envs/fv3jedi
 
 spack env activate .
 
+###############################################################################
+# Add FV3-JEDI Bundle
+###############################################################################
+
 spack add jedi-fv3-env
 
+###############################################################################
+# Concretize
+###############################################################################
+
 spack concretize --force
+
+###############################################################################
+# Build Software Stack
+###############################################################################
+
+spack install --fail-fast -j 8
+
+###############################################################################
+# Generate Modulefiles
+###############################################################################
+
+spack module lmod refresh -y
+
+spack stack setup-meta-modules
+
+###############################################################################
+# Verify
+###############################################################################
+
+source /opt/lmod/lmod/init/profile
+
+module use /opt/spack-stack/envs/fv3jedi/modules/Core
+
+module avail
+
+spack find
+
+###############################################################################
+# Completed
+###############################################################################
+
+echo "FV3-JEDI environment installation completed successfully."
