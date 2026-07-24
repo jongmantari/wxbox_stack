@@ -4,13 +4,13 @@ set -euo pipefail
 ###############################################################################
 # Initialize Lua and Lmod
 ###############################################################################
-source /etc/profile.d/02-lua.sh
-source /etc/profile.d/z00_lmod.sh
+#source /etc/profile.d/02-lua.sh
+#source /etc/profile.d/z00_lmod.sh
 
 ###############################################################################
 # Clone spack-stack in HOME
 ###############################################################################
-cd ~
+cd /opt
 
 if [ -d "spack-stack" ]; then
     echo "✅ spack-stack already exists, skipping clone"
@@ -95,12 +95,12 @@ echo "✅ Environment built successfully!"
 echo ""
 echo "To load this environment later:"
 echo ""
-echo "module use ~/spack-stack/envs/ufs-env/modules/Core"
+echo "module use /opt/spack-stack/envs/ufs-env/modules/Core"
 echo "module load stack-gcc/13.3.0"
 echo "module load stack-openmpi/5.0.8"
 echo ""
-echo "Then build UFS Weather Model:"
-echo "cd ~/ufs-weather-model/build"
-echo "cmake .. -DCMAKE_PREFIX_PATH=\$SPACK_ENV/view"
-echo "make -j"
+#echo "Then build UFS Weather Model:"
+#echo "cd ~/ufs-weather-model/build"
+#echo "cmake .. -DCMAKE_PREFIX_PATH=\$SPACK_ENV/view"
+#echo "make -j"
 `
