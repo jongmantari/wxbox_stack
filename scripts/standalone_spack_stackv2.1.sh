@@ -103,4 +103,3 @@ echo ""
 #echo "cd ~/ufs-weather-model/build"
 #echo "cmake .. -DCMAKE_PREFIX_PATH=\$SPACK_ENV/view"
 #echo "make -j"
-`
