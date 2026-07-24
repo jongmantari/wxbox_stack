@@ -35,7 +35,7 @@ spack stack create env \
     --name ufs-env \
     --compiler gcc
 
-cd ~/spack-stack/envs/ufs-env
+cd /opt/spack-stack/envs/ufs-env
 spack env activate .
 
 ###############################################################################
