@@ -19,7 +19,7 @@ else
         https://github.com/jcsda/spack-stack.git spack-stack
 fi
 
-cd ~/spack-stack
+cd /opt/spack-stack
 
 # Initialize spack-stack (safe in home)
 source ./setup.sh
@@ -51,19 +51,19 @@ spack add berkeley-db~cxx
 # ===============================
 # OPTION A: Minimal UFS (RECOMMENDED ✅)
 # ===============================
-spack add esmf
-spack add bacio
-spack add w3emc
-spack add g2
-spack add g2tmpl
-spack add ip
-spack add sp
-spack add parallelio
-spack add netcdf-c
-spack add netcdf-fortran
-spack add crtm
-spack add libpng
-spack add jasper
+#spack add esmf
+#spack add bacio
+#spack add w3emc
+#spack add g2
+#spack add g2tmpl
+#spack add ip
+#spack add sp
+#spack add parallelio
+#spack add netcdf-c
+#spack add netcdf-fortran
+#spack add crtm
+#spack add libpng
+#spack add jasper
 
 # ===============================
 # OPTION B: Full JEDI stack (VERY HEAVY ❗)
