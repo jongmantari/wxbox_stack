@@ -3,8 +3,8 @@ set -euo pipefail
 
 INSTALL_DIR=${1:-/opt/jedi-bundle}
 
-source /etc/profile.d/02-lua.sh
-source /etc/profile.d/z00_lmod.sh
+#source /etc/profile.d/02-lua.sh
+#source /etc/profile.d/z00_lmod.sh
 
 module purge
 module use /opt/spack-stack/envs/fv3jedi-2.1/modules/Core
