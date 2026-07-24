@@ -7,7 +7,7 @@ whatis("Name: JEDI Bundle")
 whatis("Version: 5a0d925")
 
 prepend_path("MODULEPATH",
-             "/opt/spack-stack/envs/fv3jedi-2.1/modules/Core")
+             "/opt/spack-stack/envs/ufs-env/modules/Core")
 
 load("stack-gcc/13.3.0")
 load("stack-openmpi/5.0.8")
